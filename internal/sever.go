@@ -24,7 +24,8 @@ func (s *Server) Run() {
 		ConnType: "tcp",
 	}
 
-	listener, err := net.Listen(server.ConnType, server.ConnHost + ":" + server.ConnPort)
+	fmt.Println("server is up")
+	listener, err := net.Listen(server.ConnType, server.ConnHost+":"+server.ConnPort)
 	ErrHandler(err)
 	defer listener.Close()
 
