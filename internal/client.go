@@ -1,4 +1,4 @@
-package webAppCalculator
+package internal
 
 import (
 	"bufio"

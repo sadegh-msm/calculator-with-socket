@@ -1,11 +1,10 @@
-package webAppCalculator
+package internal
 
 import (
 	"bufio"
 	"fmt"
 	"log"
 	"net"
-
 	"webAppCalculator/internal/calculation"
 )
 
