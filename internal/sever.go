@@ -17,15 +17,9 @@ func ErrHandler(err error) {
 	log.Fatal(err)
 }
 
-func (s *Server) Run() {
-	server := Server{
-		ConnHost: "localhost",
-		ConnPort: "8080",
-		ConnType: "tcp",
-	}
-
+func (s *Server) RunServer(connType string, connHost string, connPort string) {
 	fmt.Println("server is up")
-	listener, err := net.Listen(server.ConnType, server.ConnHost+":"+server.ConnPort)
+	listener, err := net.Listen(connType, connHost+":"+connPort)
 	ErrHandler(err)
 	defer listener.Close()
 

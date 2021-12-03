@@ -12,21 +12,16 @@ type Client struct {
 	Exp string
 }
 
-func (c *Client) ServeHttp() {
-	server := Server{
-		ConnHost: "localhost",
-		ConnPort: "8080",
-		ConnType: "tcp",
-	}
-	con, err := net.Dial(server.ConnType, server.ConnHost + ":" + server.ConnPort)
-	 ErrHandler(err)
+func (s *Server) RunClient(connType string, connHost string, connPort string) {
+	con, err := net.Dial(connType, connHost+":"+connPort)
+	ErrHandler(err)
 
 	reader := bufio.NewReader(os.Stdin)
 
 	for {
 		fmt.Println("please first enter the number after operator and second number")
 
-		c.Exp, _ = reader.ReadString('\n')
+		Cli.Exp, _ = reader.ReadString('\n')
 
 		result, _ := bufio.NewReader(con).ReadString('\n')
 		fmt.Println("the result is: " + result)
