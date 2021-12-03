@@ -7,11 +7,13 @@ import (
 	"os"
 )
 
+// Client type that has some info about client
 type Client struct {
 	Con net.Conn
 	Exp string
 }
 
+// Context is the expression that client gives to server to do math operation on it
 var Context string
 
 // RunClient make a new client to connect to the server

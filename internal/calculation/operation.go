@@ -1,4 +1,4 @@
-package webAppCalculator
+package calculation
 
 import (
 	"strconv"

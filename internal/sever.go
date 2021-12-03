@@ -5,8 +5,10 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"webAppCalculator/internal/calculation"
 )
 
+// Server type that carries all info about server stats
 type Server struct {
 	ConnHost string
 	ConnPort string
@@ -18,7 +20,7 @@ func ErrHandler(err error) {
 	log.Fatal(err)
 }
 
-// RunServer this function starts a new server for clients to connect to it
+// RunServer this method starts a new server for clients to connect to it
 func (s *Server) RunServer(connType string, connHost string, connPort string) {
 	fmt.Println("server is up")
 	listener, err := net.Listen(connType, connHost+":"+connPort)
@@ -38,10 +40,10 @@ func (s *Server) RunServer(connType string, connHost string, connPort string) {
 	}
 }
 
-// HandleRequest this function handles the request that comes from client
+// HandleRequest this method handles the request that comes from client
 func (c *Client) HandleRequest() {
 	reader := bufio.NewReader(c.Con)
-	DoMath(Context)
+	calculation.DoMath(Context)
 
 	for {
 		data, err := reader.ReadString('\n')
