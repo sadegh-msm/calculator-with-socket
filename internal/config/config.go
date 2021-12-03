@@ -1,6 +1,8 @@
 package config
 
-import webAppCalculator "webAppCalculator/internal"
+import (
+	webAppCalculator "webAppCalculator/internal"
+)
 
 // ServerConfig is a configuration for sever stats
 var ServerConfig = webAppCalculator.Server{
