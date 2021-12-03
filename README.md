@@ -26,4 +26,4 @@ layout must be like this : (operator must be between numbers)
 
 `firstNum + secondNum`
 
-![signature](signature/giga chad.jpg)
+![signature](https://github.com/sadegh-msm/calculator-with-socket/blob/main/signature/CHAD.jpg)
