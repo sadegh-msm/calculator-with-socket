@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// DoMath this function do math calculation and returns the answer
 func DoMath(exp string) string {
 	if strings.Contains(exp, "+") {
 		numbers := strings.Split(exp, "+")

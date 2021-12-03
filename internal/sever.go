@@ -13,10 +13,12 @@ type Server struct {
 	ConnType string
 }
 
+// ErrHandler this function gives an error and log it where ever its called
 func ErrHandler(err error) {
 	log.Fatal(err)
 }
 
+// RunServer this function starts a new server for clients to connect to it
 func (s *Server) RunServer(connType string, connHost string, connPort string) {
 	fmt.Println("server is up")
 	listener, err := net.Listen(connType, connHost+":"+connPort)
@@ -36,9 +38,10 @@ func (s *Server) RunServer(connType string, connHost string, connPort string) {
 	}
 }
 
+// HandleRequest this function handles the request that comes from client
 func (c *Client) HandleRequest() {
 	reader := bufio.NewReader(c.Con)
-	DoMath(c.Exp)
+	DoMath(Context)
 
 	for {
 		data, err := reader.ReadString('\n')
