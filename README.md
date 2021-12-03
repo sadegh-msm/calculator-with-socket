@@ -1,20 +1,20 @@
-#calculator-with-socket
-#####a cli client app with cobra package
+# calculator-with-socket
+##### a cli client app with cobra package
 
-##overview
+## overview
 simple program that takes two number and one operator and do the operation on them
 
-##commands 
+## commands 
 you can also run `-h` or `--help`
 
-#####available commands :
+##### available commands :
 ```
 server
 client
 help  
 ```
 
-###operators and layout
+### operators and layout
 you can use these operators :
 
 - addition `+`
