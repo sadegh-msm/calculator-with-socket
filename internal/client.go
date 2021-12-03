@@ -20,7 +20,10 @@ var Context string
 // client can do simple math calculation
 func (s *Server) RunClient(connType string, connHost string, connPort string) {
 	con, err := net.Dial(connType, connHost+":"+connPort)
-	ErrHandler(err)
+	if err != nil {
+		fmt.Println("unable to connect to server")
+		return
+	}
 
 	reader := bufio.NewReader(os.Stdin)
 
